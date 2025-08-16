@@ -8,24 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #ec4899;
-            --accent: #06b6d4;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --dark: #1f2937;
-            --light: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-300: #cbd5e1;
-            --gray-600: #475569;
-            --gray-800: #1e293b;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --primary: #000000;
+            --primary-dark: #1a1a1a;
+            --secondary: #333333;
+            --accent: #666666;
+            --success: #000000;
+            --warning: #333333;
+            --danger: #000000;
+            --dark: #000000;
+            --light: #ffffff;
+            --gray-100: #f8f8f8;
+            --gray-200: #e8e8e8;
+            --gray-300: #d0d0d0;
+            --gray-600: #666666;
+            --gray-800: #333333;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.15), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.15);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.25), 0 8px 10px -6px rgb(0 0 0 / 0.2);
         }
 
         * {
@@ -128,7 +128,7 @@
 
         /* Header Section */
         .hero {
-            background: linear-gradient(-45deg, var(--primary), var(--primary-dark), var(--secondary), var(--accent));
+            background: linear-gradient(-45deg, #000000, #1a1a1a, #333333, #000000);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
             min-height: 100vh;
@@ -238,7 +238,7 @@
         .stat-item {
             padding: 2rem;
             border-radius: 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: linear-gradient(135deg, #000000, #1a1a1a);
             color: white;
             transform: translateY(0);
             transition: all 0.3s ease;
@@ -287,7 +287,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, #000000, #333333);
             border-radius: 2px;
         }
 
@@ -321,7 +321,7 @@
         .competency-icon {
             font-size: 3rem;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, #000000, #333333);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -397,7 +397,7 @@
         }
 
         .tag {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: linear-gradient(135deg, #000000, #1a1a1a);
             color: white;
             padding: 0.3rem 0.8rem;
             border-radius: 50px;
@@ -430,7 +430,7 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, #000000, #333333);
             border-radius: 2px;
         }
 
@@ -446,7 +446,7 @@
             top: 0.3rem;
             width: 12px;
             height: 12px;
-            background: var(--primary);
+            background: #000000;
             border-radius: 50%;
             transform: translateX(-50%);
         }
@@ -490,7 +490,7 @@
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, #000000, #333333);
             color: white;
             padding: 1rem;
             border-radius: 0.5rem;
@@ -535,7 +535,7 @@
         }
 
         .skill-tag:hover {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, #000000, #333333);
             color: white;
             transform: translateY(-2px);
         }
@@ -655,7 +655,7 @@
 
         /* Final Message */
         .final-message {
-            background: linear-gradient(-45deg, var(--primary), var(--primary-dark), var(--secondary), var(--accent));
+            background: linear-gradient(-45deg, #000000, #1a1a1a, #333333, #000000);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
             color: white;
@@ -1304,7 +1304,7 @@
             const skillTags = document.querySelectorAll('.skill-tag');
             skillTags.forEach(tag => {
                 tag.addEventListener('mouseenter', () => {
-                    tag.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+                    tag.style.background = 'linear-gradient(135deg, #000000, #333333)';
                     tag.style.color = 'white';
                     tag.style.transform = 'translateY(-2px)';
                 });
