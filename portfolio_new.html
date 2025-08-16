@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서현석 - 111퍼센트 지원 포트폴리오</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1f2937;
+            --light: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Utility Classes */
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-fadeInLeft {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-fadeInRight {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Header Section */
+        .hero {
+            background: linear-gradient(-45deg, var(--primary), var(--primary-dark), var(--secondary), var(--accent));
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-text h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-highlight {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .hero-highlight p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-contact {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .contact-item i {
+            width: 24px;
+            margin-right: 1rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 6rem 0;
+            background: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-alt {
+            background-color: var(--gray-100);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Core Competencies */
+        .competency-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .competency-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .competency-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .competency-desc {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .competency-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .competency-list li {
+            padding: 0.3rem 0;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        .competency-list li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Project Cards */
+        .project-card {
+            margin-bottom: 3rem;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .project-desc {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-date {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .project-features h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.3rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        /* Metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-item {
+            background: var(--gray-100);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            margin-top: 0.3rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .skill-category i {
+            margin-right: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--gray-200);
+            color: var(--gray-800);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Portfolio Highlights */
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, var(--gray-100), white);
+            border: 2px solid var(--gray-200);
+        }
+
+        .highlight-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .highlight-desc {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .highlight-list h4 {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+
+        .highlight-list ul {
+            list-style: none;
+        }
+
+        .highlight-list li {
+            padding: 0.2rem 0;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        .highlight-list li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Awards */
+        .award-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: var(--gray-100);
+            border-radius: 0.5rem;
+        }
+
+        .award-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            color: var(--warning);
+        }
+
+        .award-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+
+        .award-info p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+
+        /* Education & Experience */
+        .edu-exp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .edu-item, .exp-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.8rem;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .edu-item h3, .exp-item h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .edu-item p, .exp-item p {
+            color: var(--gray-600);
+            margin-bottom: 0.3rem;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        /* Final Message */
+        .final-message {
+            background: linear-gradient(-45deg, var(--primary), var(--primary-dark), var(--secondary), var(--accent));
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .final-message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .final-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+
+        .final-desc {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .final-feature {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .final-feature i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .final-feature h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .final-feature p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-contact {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-contact i {
+            margin: 0 0.5rem;
+        }
+
+        .footer-divider {
+            margin: 0 1rem;
+            opacity: 0.5;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .project-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .edu-exp-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text h2 {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .final-title {
+                font-size: 2rem;
+            }
+
+            .final-desc {
+                font-size: 1rem;
+            }
+
+            .highlight-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .final-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text animate-fadeInLeft">
+                        <h1>서현석</h1>
+                        <h2>게임 개발자 | Unity 전문가</h2>
+                        <div class="hero-highlight">
+                            <p><i class="fas fa-rocket"></i> "Move Fast, Change Everytime!"</p>
+                            <p>111퍼센트의 철학처럼 <strong>빠른 개발 사이클</strong>과 <strong>참신한 게임 룰</strong>로 유저에게 재미를 전달하는 게임 개발자입니다.</p>
+                        </div>
+                    </div>
+                    <div class="hero-contact animate-fadeInRight">
+                        <h3>연락처</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>suhya990312@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/faces0312" target="_blank">github.com/faces0312</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item animate-fadeInUp">
+                    <span class="stat-number">7+</span>
+                    <div class="stat-label">개발 완료 게임</div>
+                </div>
+                <div class="stat-item animate-fadeInUp">
+                    <span class="stat-number">2</span>
+                    <div class="stat-label">상용 출시 경험</div>
+                </div>
+                <div class="stat-item animate-fadeInUp">
+                    <span class="stat-number">611</span>
+                    <div class="stat-label">유저 테스트 참여자</div>
+                </div>
+                <div class="stat-item animate-fadeInUp">
+                    <span class="stat-number">6년</span>
+                    <div class="stat-label">게임 개발 경험</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">111퍼센트 핵심 가치 부합도</h2>
+            <div class="card-grid">
+                <div class="card competency-card">
+                    <div class="competency-icon">⚡</div>
+                    <h3 class="competency-title">빠른 개발 문화</h3>
+                    <p class="competency-desc">2개월 내 완성되는 프로젝트 다수 경험<br>애자일 개발 방법론 적용</p>
+                    <ul class="competency-list">
+                        <li>해와 달의 몰락: 2개월 개발 완료</li>
+                        <li>실시간 피드백 기반 개선</li>
+                        <li>MVP 우선 개발 접근법</li>
+                    </ul>
+                </div>
+                <div class="card competency-card">
+                    <div class="competency-icon">🎮</div>
+                    <h3 class="competency-title">참신한 룰 설계</h3>
+                    <p class="competency-desc">독창적인 게임 메커니즘 구현<br>유저 몰입도 극대화 시스템</p>
+                    <ul class="competency-list">
+                        <li>동시 캐릭터 조종 시스템</li>
+                        <li>FSM 기반 Enemy AI</li>
+                        <li>로그라이크 요소 적용</li>
+                    </ul>
+                </div>
+                <div class="card competency-card">
+                    <div class="competency-icon">🎯</div>
+                    <h3 class="competency-title">재미의 본질 추구</h3>
+                    <p class="competency-desc">데이터 기반 유저 경험 최적화<br>지속적인 플레이 테스트 진행</p>
+                    <ul class="competency-list">
+                        <li>32명 설문 기반 개선</li>
+                        <li>구글 플레이스토어 출시</li>
+                        <li>1,800명 유저 확보</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Major Projects -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">주요 프로젝트</h2>
+            
+            <!-- IDLE SOUL Project -->
+            <div class="card project-card">
+                <div class="project-header">
+                    <div class="project-info">
+                        <h3>IDLE SOUL</h3>
+                        <p class="project-desc">2.5D 핵앤슬래시 방치형 게임</p>
+                        <p class="project-date">2024.10 ~ 2025.01 (3개월)</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Unity3D</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">FSM</span>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-features">
+                        <h4>핵심 기여사항</h4>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-title">Enemy & Boss 시스템 설계</div>
+                                <div class="timeline-desc">FSM 패턴을 활용한 체계적인 AI 행동 관리</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-title">던전 시스템 개발</div>
+                                <div class="timeline-desc">신규 재화 던전으로 플레이 경험 차별화</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-title">레벨 디자인 최적화</div>
+                                <div class="timeline-desc">유저 피드백 기반 난이도 곡선 조정</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-metrics">
+                        <h4>성과 지표</h4>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-number">611명</div>
+                                <div class="metric-label">총 방문자</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">32명</div>
+                                <div class="metric-label">설문 참여</div>
+                            </div>
+                        </div>
+                        <div class="highlight-box">
+                            <strong>111퍼센트 적합성:</strong> itch.io를 통한 빠른 유저 테스트와 피드백 기반 개선으로 111퍼센트의 빠른 개발 문화와 일치
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 해와 달의 몰락 Project -->
+            <div class="card project-card">
+                <div class="project-header">
+                    <div class="project-info">
+                        <h3>해와 달의 몰락</h3>
+                        <p class="project-desc">캐주얼 러닝 게임 (상용 출시)</p>
+                        <p class="project-date">2023.01 ~ 2023.03 (2개월)</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Unity2D</span>
+                        <span class="tag">구글 플레이</span>
+                        <span class="tag">AdMob</span>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-features">
+                        <h4>혁신적 게임 메커니즘</h4>
+                        <ul class="competency-list">
+                            <li><strong>동시 캐릭터 조종:</strong> 해와 달 두 캐릭터를 동시에 컨트롤하는 독창적 시스템</li>
+                            <li><strong>Collider 기반 상호작용:</strong> 정교한 물리 기반 게임 플레이</li>
+                            <li><strong>JSON 데이터 관리:</strong> 효율적인 게임 데이터 저장 시스템</li>
+                        </ul>
+                    </div>
+                    <div class="project-metrics">
+                        <h4>상용화 성과</h4>
+                        <div class="award-item">
+                            <i class="fas fa-store award-icon"></i>
+                            <div class="award-info">
+                                <h4>구글 플레이스토어 정식 출시</h4>
+                                <p>AdMob 광고 수익화 구현</p>
+                            </div>
+                        </div>
+                        <div class="highlight-box">
+                            <strong>111퍼센트 가치 부합:</strong> 심플한 룰(동시 조종)로 독특한 재미를 구현하여 111퍼센트의 "참신한 룰" 철학과 일치
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ZEPETO World Project -->
+            <div class="card project-card">
+                <div class="project-header">
+                    <div class="project-info">
+                        <h3>2022 콘텐츠원캠퍼스</h3>
+                        <p class="project-desc">ZEPETO 메타버스 월드 개발</p>
+                        <p class="project-date">2022.08 ~ 2023.03 (7개월)</p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Unity3D</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">ZEPETO</span>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-features">
+                        <h4>리더십 & 기술 성과</h4>
+                        <ul class="competency-list">
+                            <li><strong>협업 리더:</strong> 팀 프로젝트 진행 및 일정 관리</li>
+                            <li><strong>스토리 게임플레이 융합:</strong> 웹툰과 게임 요소 결합</li>
+                            <li><strong>아바타 동적 초기화:</strong> 사용자 맞춤형 경험 제공</li>
+                        </ul>
+                    </div>
+                    <div class="project-metrics">
+                        <h4>검증된 성과</h4>
+                        <div class="metrics-grid">
+                            <div class="metric-item">
+                                <div class="metric-number">1,800명</div>
+                                <div class="metric-label">활성 유저</div>
+                            </div>
+                            <div class="metric-item">
+                                <div class="metric-number">2,500회</div>
+                                <div class="metric-label">총 방문</div>
+                            </div>
+                        </div>
+                        <div class="award-item">
+                            <i class="fas fa-trophy award-icon"></i>
+                            <div class="award-info">
+                                <h4>네이버 ZEPETO 월드 공식 등재</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">기술 스택</h2>
+            <div class="skills-grid">
+                <div class="card skill-category">
+                    <h3><i class="fas fa-gamepad" style="color: var(--primary);"></i>게임 엔진</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Unity3D</span>
+                        <span class="skill-tag">Unity2D</span>
+                        <span class="skill-tag">C#</span>
+                    </div>
+                </div>
+                
+                <div class="card skill-category">
+                    <h3><i class="fas fa-code" style="color: var(--success);"></i>개발 방법론</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">FSM</span>
+                        <span class="skill-tag">MVC</span>
+                        <span class="skill-tag">Object Pooling</span>
+                        <span class="skill-tag">Facade Pattern</span>
+                    </div>
+                </div>
+                
+                <div class="card skill-category">
+                    <h3><i class="fas fa-tools" style="color: var(--secondary);"></i>협업 도구</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">TypeScript</span>
+                    </div>
+                </div>
+                
+                <div class="card skill-category">
+                    <h3><i class="fas fa-mobile-alt" style="color: var(--danger);"></i>플랫폼</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Google Play</span>
+                        <span class="skill-tag">itch.io</span>
+                        <span class="skill-tag">ZEPETO</span>
+                    </div>
+                </div>
+                
+                <div class="card skill-category">
+                    <h3><i class="fas fa-chart-bar" style="color: var(--warning);"></i>분석 & 수익화</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AdMob</span>
+                        <span class="skill-tag">Profiler</span>
+                        <span class="skill-tag">JSON</span>
+                    </div>
+                </div>
+                
+                <div class="card skill-category">
+                    <h3><i class="fas fa-tachometer-alt" style="color: var(--accent);"></i>최적화</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Batching</span>
+                        <span class="skill-tag">Draw Call 최적화</span>
+                        <span class="skill-tag">Coroutine</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Highlights -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">포트폴리오 하이라이트</h2>
+            <div class="highlight-grid">
+                <div class="card highlight-card">
+                    <h3 class="highlight-title">TKsoft 게임 소모임 운영</h3>
+                    <p class="highlight-desc">6년간 7개의 모바일/PC 게임을 기획부터 출시까지 주도</p>
+                    <div class="highlight-content">
+                        <div class="highlight-list">
+                            <h4>대표 게임들</h4>
+                            <ul>
+                                <li>닌자: 천년의 수련</li>
+                                <li>OVER HEAD</li>
+                                <li>군인 키우기</li>
+                                <li>RBR: Run Block Run</li>
+                            </ul>
+                        </div>
+                        <div class="highlight-list">
+                            <h4>구현 기술</h4>
+                            <ul>
+                                <li>로그라이크 시스템</li>
+                                <li>가챠 시스템</li>
+                                <li>무한 러닝맵</li>
+                                <li>능력 카드 시스템</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card highlight-card">
+                    <h3 class="highlight-title">수상 및 인정</h3>
+                    <div class="award-item">
+                        <i class="fas fa-trophy award-icon"></i>
+                        <div class="award-info">
+                            <h4>PRIME 전공소모임</h4>
+                            <p>공과대학장상 (2024.01)</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <i class="fas fa-award award-icon"></i>
+                        <div class="award-info">
+                            <h4>국립중앙도서관 데이터활용 콘텐츠제작 공모전</h4>
+                            <p>콘텐츠진흥원장상 (2023.12)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="edu-exp-grid">
+                <div>
+                    <h2 class="section-title">학력</h2>
+                    <div class="edu-item">
+                        <h3>상명대학교 천안캠퍼스</h3>
+                        <p>전자공학과 졸업</p>
+                        <p class="date">2018.03 ~ 2024.02</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="section-title">경력</h2>
+                    <div class="exp-item">
+                        <h3>스파르타코딩 내일배움캠프</h3>
+                        <p>게임 개발 과정 수료</p>
+                        <p class="date">2024.08 ~ 2025.01</p>
+                    </div>
+                    <div class="exp-item">
+                        <h3>레이징덕</h3>
+                        <p>인턴</p>
+                        <p class="date">2021.05 ~ 2021.07</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Message -->
+    <section class="section final-message">
+        <div class="final-content">
+            <div class="container">
+                <h2 class="final-title">111퍼센트와 함께 성장하고 싶습니다</h2>
+                <p class="final-desc">
+                    "재미는 심플하고 참신한 룰에서 나온다"는 111퍼센트의 철학에 깊이 공감합니다.<br>
+                    빠른 개발 사이클과 유저 중심적 사고로 전 세계 유저들에게 즐거움을 전달하고 싶습니다.
+                </p>
+                <div class="final-features">
+                    <div class="final-feature">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>혁신적 아이디어</h3>
+                        <p>창의적이고 참신한 게임 메커니즘 설계</p>
+                    </div>
+                    <div class="final-feature">
+                        <i class="fas fa-rocket"></i>
+                        <h3>빠른 실행력</h3>
+                        <p>아이디어를 신속하게 프로토타입으로 구현</p>
+                    </div>
+                    <div class="final-feature">
+                        <i class="fas fa-heart"></i>
+                        <h3>유저 중심 사고</h3>
+                        <p>데이터와 피드백 기반의 지속적 개선</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-contact">
+                <i class="fas fa-envelope"></i>suhya990312@gmail.com
+                <span class="footer-divider">|</span>
+                <i class="fab fa-github"></i>github.com/faces0312
+            </div>
+            <div class="footer-copyright">
+                2025 · 서현석 포트폴리오 · 111퍼센트 지원용
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-fadeInUp, .animate-fadeInLeft, .animate-fadeInRight');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                observer.observe(el);
+            });
+
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.card, .stat-item');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-8px)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Skill tag hover effects
+            const skillTags = document.querySelectorAll('.skill-tag');
+            skillTags.forEach(tag => {
+                tag.addEventListener('mouseenter', () => {
+                    tag.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+                    tag.style.color = 'white';
+                    tag.style.transform = 'translateY(-2px)';
+                });
+                
+                tag.addEventListener('mouseleave', () => {
+                    tag.style.background = 'var(--gray-200)';
+                    tag.style.color = 'var(--gray-800)';
+                    tag.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
