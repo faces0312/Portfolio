@@ -270,13 +270,6 @@ body {
     flex-direction: column;
     justify-content: center;     /* 내부 콘텐츠 중앙 정렬 */
 }
-
-/* 롱폼 (16:9) - 넓고 낮게 - Idle Soul */
-.project-video.longform {
-    max-width: 1400px;    /* 넓게 */
-    height: 788px;        /* 16:9 비율 (1400 * 9/16) */
-}
-
 /* 쇼츠 (9:16) - 좁고 높게 - PolyStone, 황야의 수호자 */
 .project-video.shorts {
     max-width: 400px;     /* 좁게 */
@@ -1827,105 +1820,6 @@ body {
     }
 }
 /* Contact 섹션 전용 스타일 */
-.contact-section {
-    margin-top: 60px;
-    text-align: center;
-    animation: fadeIn 1s ease;
-}
-
-.contact-title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #3a4fff;
-    margin-bottom: 6px;
-}
-
-.contact-subtitle {
-    color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 24px;
-}
-
-.contact-links-vertical {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 22px;
-}
-
-.contact-item-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    position: relative;
-}
-
-.contact-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.contact-item:hover {
-    transform: translateY(-3px);
-    color: #3a4fff;
-}
-
-.contact-icon-vertical {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 8px;
-    opacity: 0.9;
-    transition: opacity 0.2s ease;
-}
-
-.contact-item:hover .contact-icon-vertical {
-    opacity: 1;
-}
-
-.contact-text {
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.contact-detail {
-    font-size: 0.8rem;
-    color: #777;
-    margin-top: 2px;
-}
-
-.copy-btn {
-    background: rgba(58, 79, 255, 0.1);
-    border: 1px solid rgba(58, 79, 255, 0.3);
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    opacity: 0.7;
-}
-
-.copy-btn:hover {
-    background: rgba(58, 79, 255, 0.2);
-    border-color: rgba(58, 79, 255, 0.5);
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-.copy-btn:active {
-    transform: scale(0.95);
-}
-
-.copy-btn.copied {
-    background: rgba(34, 197, 94, 0.2);
-    border-color: rgba(34, 197, 94, 0.5);
-    opacity: 1;
-}
-
-/* Contact 섹션 전용 스타일 - 독립적인 클래스명 사용 */
 .contact-wrapper {
     display: flex;
     width: 100%;
@@ -1975,7 +1869,6 @@ body {
     transition: all 0.35s ease;
     z-index: 1;
 }
-
 .contact-social-links a {
     background: #fff;
     color: #3e82fb;
@@ -1993,6 +1886,7 @@ body {
 .contact-social:hover .contact-social-links a {
     background: rgba(255, 255, 255, 0.2);
     color: #fff;
+    opacity: 1; /* 호버 시 보이도록 */
 }
 
 .contact-social-links a:hover {
@@ -2055,15 +1949,17 @@ body {
     100% { background-position: 0% 50%; }
   }
   
-  
-  
+
   /* 📘 설명 텍스트 */
-  #polystone .project-description {
+#polystone .project-description {
     color: #DDE1FF;
-    line-height: 1.6;
-    font-weight: 400;
+    line-height: 1.7;
     font-size: 1.05rem;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid rgba(167, 139, 250, 0.4);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
   }
   
   /* 🏷️ 기술 배지 */
@@ -2129,26 +2025,81 @@ body {
     color: #e0e7ff;
   }
 
-/* 🏷️ 제목 스타일 */
+/* 🏷️ 제목 스타일 (룬 이펙트 + 빛 스캔 효과) */
 #idlesoul .project-info h2 {
-  font-family: 'Cinzel', 'Trajan Pro', serif;
-  font-weight: 700;
-  font-size: 2rem;
-  color: #fbbf24; /* 황금빛 타이틀 */
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4),
-               0 2px 8px rgba(0, 0, 0, 0.7);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-/* 🧾 설명 텍스트 */
-#idlesoul .project-description {
-  color: #e2e8f0;
-  line-height: 1.7;
-  font-size: 1.05rem;
-  font-weight: 400;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-}
+    font-family: 'Cinzel Decorative', 'Trajan Pro', serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #fbbf24; /* 기본 황금빛 */
+    text-shadow:
+      0 0 12px rgba(255, 215, 0, 0.5),
+      0 2px 8px rgba(0, 0, 0, 0.7);
+  
+    /* ✨ 금속 광택 애니메이션 */
+    background: linear-gradient(90deg, #fbbf24 0%, #fff1a8 50%, #fbbf24 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: soulShine 5s linear infinite;
+  
+    position: relative;
+  }
+  
+  /* 타이틀에 서서히 흐르는 신성한 빛 효과 */
+  @keyframes soulShine {
+    0% { background-position: 0% 50%; filter: brightness(1); }
+    50% { background-position: 100% 50%; filter: brightness(1.3); }
+    100% { background-position: 0% 50%; filter: brightness(1); }
+  }
+  
+  /* 빛 스캔 효과 (가로로 흘러가는 성역의 오라) */
+  #idlesoul .project-info h2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-20deg);
+    animation: soulLightSweep 4.5s ease-in-out infinite;
+  }
+  
+  @keyframes soulLightSweep {
+    0% { left: -40%; opacity: 0.2; }
+    40% { left: 120%; opacity: 0.8; }
+    100% { left: 120%; opacity: 0; }
+  }
+  
+  /* 🧾 설명 텍스트 (카드형 강조 스타일) */
+  #idlesoul .project-description {
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.06);
+    border-left: 3px solid rgba(251, 191, 36, 0.5); /* 황금빛 강조선 */
+    padding: 1rem 1.2rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    box-shadow:
+      inset 0 0 12px rgba(255, 215, 0, 0.15),
+      0 2px 10px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* hover 시 카드가 살짝 떠오르며 발광 */
+  #idlesoul .project-description:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      inset 0 0 16px rgba(255, 215, 0, 0.25),
+      0 4px 15px rgba(255, 215, 0, 0.25);
+  }
+  
 
 /* 🛠️ 기술 배지 */
 #idlesoul .project-badges img {
@@ -2225,39 +2176,99 @@ body {
 
 /* 🤠 황야의 수호자 - 서부 디펜스 테마 */
 #guardian {
-    --section-bg: linear-gradient(135deg, #2c1810 0%, #5b3713 45%, #a97435 100%);
-    font-family: 'Oswald', 'Pretendard', 'Roboto Condensed', sans-serif;
-    color: #f5deb3;
+    --section-bg: radial-gradient(circle at 30% 20%, #4a2b12 0%, #2c1810 45%, #1a0f08 100%);
+    background: var(--section-bg);
+    font-family: 'Oswald', 'Roboto Condensed', 'Pretendard', sans-serif;
+    color: #ecd9b5;
+  }
+/* 배경에 살짝 먼지 입힌 질감 효과 */
+#guardian::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://www.transparenttextures.com/patterns/dust.png');
+    opacity: 0.07;
+    mix-blend-mode: overlay;
+    pointer-events: none;
   }
   
   /* 🏷️ 제목 스타일 */
   #guardian .project-info h2 {
-    font-family: 'Oswald', 'Bebas Neue', sans-serif;
-    font-size: 2.2rem;
+    font-family: 'Bebas Neue', 'Oswald', sans-serif;
+    font-size: 2.8rem;
     font-weight: 700;
-    color: #ffcc66;
     text-transform: uppercase;
+    color: #ffb347;
+    letter-spacing: 2px;
+    text-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.8),
+      0 0 20px rgba(255, 165, 0, 0.4),
+      0 0 35px rgba(255, 214, 128, 0.3);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #ffcc33, #ff9933);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+/* 📜 설명 텍스트 - 서부 디펜스 테마 카드형 */
+#guardian .project-description {
+    color: #f3e5c0; /* 따뜻한 샌드톤 */
+    font-size: 1.1rem;
+    line-height: 1.75;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  
+    /* 💡 카드형 배경 */
+    background: rgba(255, 228, 181, 0.07); /* 밝은 황토빛 투명 카드 */
+    border-left: 3px solid rgba(255, 184, 77, 0.4); /* 금빛 라인 */
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+  
+    /* ✨ subtle 입체감 */
+    box-shadow:
+      inset 0 0 6px rgba(255, 200, 100, 0.08),
+      0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+  
+  
+  /* 🕰️ 프로젝트 기간 */
+  #guardian .project-period {
+    display: inline-block;
+    color: #e8c27c;
+    font-weight: 600;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 4px 10px;
+    border-radius: 6px;
     letter-spacing: 1px;
-    text-shadow: 0 0 12px rgba(255, 140, 0, 0.4),
-                 0 2px 8px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 6px rgba(255, 200, 100, 0.4);
+    border: 1px solid rgba(255, 200, 100, 0.25);
+    backdrop-filter: blur(3px);
+    box-shadow:
+      inset 0 0 4px rgba(255, 200, 120, 0.15),
+      0 2px 6px rgba(0, 0, 0, 0.6);
   }
   
-  /* 📜 설명 텍스트 */
-  #guardian .project-description {
-    color: #f8f0dc;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  /* 🎞️ 영상 프레임 강조 */
+  #guardian .project-media iframe {
+    border: 2px solid rgba(255, 191, 105, 0.3);
+    border-radius: 12px;
+    box-shadow:
+      0 0 25px rgba(255, 171, 64, 0.25),
+      0 8px 20px rgba(0, 0, 0, 0.7);
   }
   
-  /* 🏷️ 기술 배지 */
+  /* ✨ 배지 영역 */
   #guardian .project-badges img {
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
-    transition: transform 0.25s ease, filter 0.25s ease;
+    margin-right: 8px;
+    margin-top: 10px;
+    filter: sepia(0.3) saturate(1.2) brightness(1.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
   }
   #guardian .project-badges img:hover {
-    transform: scale(1.08);
-    filter: drop-shadow(0 3px 8px rgba(255, 140, 0, 0.6));
+    transform: scale(1.05);
+    filter: sepia(0.1) saturate(1.4) brightness(1.3);
   }
   
    /* 📂 아코디언 버튼 */
@@ -2321,80 +2332,232 @@ body {
 }
   
 
-/* ZEPETO - 메타버스 테마 */
+/* 🏺 ZEPETO - 백제 금동대향로 메타버스 테마 */
 #zepeto {
-    --section-bg: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 50%, #45B7D1 100%);
-    font-family: 'Poppins', 'Arial', sans-serif;
-}
-
+    --section-bg: linear-gradient(135deg, #e3c891 0%, #ffe6b7 25%, #a1e3e2 70%, #6bd6e3 100%);
+    background: var(--section-bg);
+    font-family: 'Poppins', 'Pretendard', 'Noto Sans KR', sans-serif;
+    color: #fffaf0;
+  }
+  
+  /* 🌫️ 배경 질감: 은은한 입체감 */
+  #zepeto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  
+/* 🏷️ 프로젝트 제목 (선명한 금빛 메타버스 스타일) */
 #zepeto .project-info h2 {
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    font-weight: 600;
-}
-
+    font-family: 'Poppins', 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  
+    /* ✨ 황금 → 청록빛 그라데이션 (명도 대비 강화) */
+    background: linear-gradient(90deg, #FFD700 0%, #FFE873 40%, #4FC3F7 80%, #FFD700 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: zepetoGlow 6s linear infinite;
+  
+    /* 💡 흐리지 않고 또렷하게 */
+    text-shadow:
+      0 1px 2px rgba(0,0,0,0.6),
+      0 0 6px rgba(255, 240, 180, 0.6);
+  }
+  
+  
+  
+  @keyframes zepetoSweep {
+    0% { left: -30%; opacity: 0.2; }
+    40% { left: 120%; opacity: 0.8; }
+    100% { left: 120%; opacity: 0; }
+  }
+  
+/* 📜 프로젝트 설명 (카드형 하이라이트 블록) */
 #zepeto .project-description {
-    color: #f8f9fa;
-}
-
-/* ZEPETO 아코디언 글자 색상 */
-#zepeto .accordion-header {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;  /* 흰색 */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    font-weight: 500;
+    color: #1e1e1e; /* 🖤 진한 그레이 — 밝은 배경 대비용 */
+    font-size: 1.05rem;
+    line-height: 1.75;
+    background: rgba(255, 255, 255, 0.3); /* 약간의 유리 질감 */
+    border-left: 3px solid rgba(50, 50, 50, 0.3); /* 은은한 다크라인 */
+    padding: 1rem 1.2rem;
+    border-radius: 10px;
+    text-shadow: none; /* 흐림 제거 */
+    box-shadow:
+      inset 0 0 10px rgba(255, 255, 255, 0.2),
+      0 3px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-}
-
-#zepeto .accordion-header:hover {
-    background: rgba(14, 165, 233, 0.2);
-    color: #0ea5e9;  /* 하늘색 */
-}
-
-#zepeto .accordion-body {
-    color: #e0f2fe;  /* 밝은 하늘색 */
-}
-
-#zepeto .accordion-body li {
-    color: #bae6fd;  /* 중간 하늘색 */
-}
-
-#zepeto i {
-    color: #0ea5e9;  /* 하늘색 포인트 */
-}
-
-/* 아코디언 플러스 아이콘 색상 */
-/* ZEPETO 섹션일 때 하단 카테고리 색상 */
-#zepeto ~ .carousel-container .tab {
-    color: #e0f2fe;  /* 밝은 하늘색 */
-}
-
-#zepeto ~ .carousel-container .tab.active {
-    color: #0ea5e9;  /* 하늘색 */
-    background: rgba(14, 165, 233, 0.2);
-}
-
-/* Strong 태그 색상 */
-#zepeto strong {
-    color: #0ea5e9;  /* 하늘색 */
-}
-
-/* Tinny Spaceship - 우주 게임 테마 */
-#tinny {
-    --section-bg: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
-    font-family: 'Space Mono', 'Courier New', monospace;
-}
-
-#tinny .project-info h2 {
-    color: #00d4ff;
-    text-shadow: 0 0 10px #00d4ff;
+  }
+  
+  
+  /* hover 시 카드의 반사광 증가 */
+  #zepeto .project-description:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      inset 0 0 16px rgba(255, 255, 255, 0.1),
+      0 4px 18px rgba(255, 223, 100, 0.25);
+  }
+  /* 🕹️ 아코디언 헤더 */
+#zepeto .accordion-header {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #1e1e1e;
     font-weight: 600;
-}
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    box-shadow:
+      inset 0 0 6px rgba(255, 255, 255, 0.3),
+      0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  #zepeto .accordion-header:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: #a5742b; /* 따뜻한 금빛 브라운 */
+    transform: translateY(-2px);
+  }
+  
+  /* 🧩 아코디언 본문 */
+  #zepeto .accordion-body {
+    color: #2b2b2b;
+    line-height: 1.7;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #zepeto .accordion-body li {
+    color: #3a3a3a;
+  }
+  
+  /* ✨ 아이콘 포인트 */
+  #zepeto i {
+    color: #a5742b; /* 골드 브라운 포인트 */
+    transition: color 0.3s ease;
+  }
+  #zepeto i:hover {
+    color: #d79a38; /* 밝은 골드 */
+  }
+  
+  /* 📅 기간 표시 */
+  #zepeto .project-period {
+    color: #3a2c14;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-shadow: none;
+  }
+  
+  /* 🔹 Strong 태그 색상 */
+  #zepeto strong {
+    color: #a5742b; /* 은은한 금빛 포인트 */
+  }
+  
 
-#tinny .project-description {
+/* 🚀 Tinny Spaceship - 우주 게임 테마 */
+#tinny {
+    --section-bg: radial-gradient(circle at 30% 20%, #0a0a16 0%, #0c0c1f 45%, #111a3a 80%, #1a1a2e 100%);
+    background: var(--section-bg);
+    font-family: 'Space Mono', 'Courier New', monospace;
     color: #e0e0e0;
-}
+  }
+  
+  /* 🌌 별빛 질감 (패럴랙스 느낌) */
+  #tinny::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.05;
+    animation: starsMove 25s linear infinite alternate;
+    pointer-events: none;
+  }
+  @keyframes starsMove {
+    from { background-position: 0 0; }
+    to { background-position: 100px 200px; }
+  }
+  
+  /* 🛸 프로젝트 제목 */
+  #tinny .project-info h2 {
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #00e5ff;
+    letter-spacing: 3px;
+    text-shadow:
+      0 0 12px rgba(0, 228, 255, 0.7),
+      0 0 24px rgba(0, 150, 255, 0.5),
+      0 0 36px rgba(0, 100, 255, 0.3);
+    position: relative;
+  }
+  
+  /* ✴️ 제목 애니메이션 (빛 스캔 효과) */
+  #tinny .project-info h2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
+    animation: lightScan 4s ease-in-out infinite;
+  }
+  @keyframes lightScan {
+    0% { left: -60%; }
+    100% { left: 110%; }
+  }
+  
+  /* 📜 프로젝트 설명 */
+  #tinny .project-description {
+    color: #d6f6ff;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    letter-spacing: 0.4px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid rgba(0, 212, 255, 0.3);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    text-shadow:
+      0 0 6px rgba(0, 212, 255, 0.2),
+      0 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* 🛰️ 강조 텍스트 */
+  #tinny strong {
+    color: #00d4ff;
+    text-shadow:
+      0 0 10px rgba(0, 228, 255, 0.5),
+      0 0 18px rgba(0, 150, 255, 0.3);
+  }
+  
+  /* 🌠 아이콘 포인트 */
+  #tinny i {
+    color: #00d4ff;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  #tinny i:hover {
+    color: #4ef8ff;
+    transform: scale(1.15);
+  }
+  
+  /* 🕰️ 프로젝트 기간 */
+  #tinny .project-period {
+    color: #a8e4ff;
+    font-weight: 600;
+    text-shadow:
+      0 0 6px rgba(0, 228, 255, 0.4),
+      0 1px 3px rgba(0, 0, 0, 0.6);
+    font-size: 1rem;
+  }
+  
 
 /* Tinny Spaceship 아코디언 글자 색상 */
 #tinny .accordion-header {
@@ -2439,21 +2602,78 @@ body {
     color: #00d4ff;  /* 시안색 */
 }
 
-/* 해와 달의 몰락 - 동양 판타지 테마 */
+/* 🌕 해와 달의 몰락 - 동양 판타지 테마 */
 #moonfall {
-    --section-bg: linear-gradient(135deg, #2c1810 0%, #4a2c17 50%, #8b4513 100%);
-    font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-}
-
-#moonfall .project-info h2 {
-    color: #ffd700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    --section-bg: radial-gradient(circle at 20% 30%, #1c0e07 0%, #2c1810 40%, #3b1d10 65%, #6b3613 100%);
+    background: var(--section-bg);
+    font-family: 'Noto Serif KR', 'Pretendard', 'Malgun Gothic', serif;
+    color: #f8f4e8;
+  }
+  
+  /* 🌫️ 은은한 안개 질감 */
+  #moonfall::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 20%, rgba(255, 240, 180, 0.06) 0%, rgba(0,0,0,0.7) 100%);
+    mix-blend-mode: overlay;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  
+  /* 🏮 프로젝트 제목 */
+  #moonfall .project-info h2 {
+    font-family: 'Cormorant Garamond', 'Noto Serif KR', serif;
+    font-size: 2.6rem;
     font-weight: 700;
-}
-
-#moonfall .project-description {
-    color: #f5f5dc;
-}
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ffd700 0%, #ffae42 40%, #e0c084 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    text-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.6),
+      0 0 25px rgba(255, 200, 60, 0.3);
+  }
+  
+  /* 📜 프로젝트 설명 */
+  #moonfall .project-description {
+    color: #f3e9d2;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid rgba(255, 215, 0, 0.4);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+  }
+  
+  /* ✴️ 강조 텍스트 */
+  #moonfall strong {
+    color: #ffd166;
+    text-shadow:
+      0 0 8px rgba(255, 200, 50, 0.4),
+      0 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* 🌙 아이콘 및 장식 */
+  #moonfall i {
+    color: #ffcc66;
+    transition: color 0.3s ease;
+  }
+  #moonfall i:hover {
+    color: #ffe17d;
+  }
+  
+  /* 🌗 프로젝트 기간 */
+  #moonfall .project-period {
+    color: #ffeaa7;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(255, 200, 120, 0.5);
+    font-size: 1rem;
+  }
+  
 
 /* 해와 달의 몰락 아코디언 글자 색상 */
 #moonfall .accordion-header {
@@ -2498,21 +2718,97 @@ body {
     color: #ffd700;  /* 황금색 */
 }
 
-/* 닌자: 천년의 수련 - 닌자 테마 */
+/* 🥷 닌자: 천년의 수련 - 다크 블러드 테마 */
 #ninja {
-    --section-bg: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #404040 100%);
-    font-family: 'Roboto Condensed', 'Arial', sans-serif;
-}
-
-#ninja .project-info h2 {
-    color: #ff4444;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-    font-weight: 700;
-}
-
-#ninja .project-description {
+    --section-bg: radial-gradient(circle at 20% 20%, #0d0d0d 0%, #1a1a1a 35%, #2b2b2b 70%, #3d3d3d 100%);
+    background: var(--section-bg);
+    font-family: 'Roboto Condensed', 'Bebas Neue', 'Arial', sans-serif;
     color: #e8e8e8;
-}
+  }
+  
+  /* ⚔️ 배경 효과: 연기/안개 텍스처 */
+  #ninja::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  
+  /* 🏷️ 프로젝트 제목 */
+  #ninja .project-info h2 {
+    font-family: 'Bebas Neue', 'Roboto Condensed', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff4d4d 0%, #ff1a1a 50%, #b30000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    text-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.8),
+      0 0 15px rgba(255, 0, 0, 0.3);
+    position: relative;
+  }
+  
+  /* 🔥 제목 붓터치 애니메이션 효과 */
+  #ninja .project-info h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff1a1a, #b30000);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    animation: slashIn 1.8s ease-out forwards;
+  }
+  
+  @keyframes slashIn {
+    from { width: 0%; opacity: 0; }
+    to { width: 100%; opacity: 1; }
+  }
+  
+  /* 📜 프로젝트 설명 */
+  #ninja .project-description {
+    color: #f0f0f0;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    letter-spacing: 0.3px;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid rgba(255, 68, 68, 0.4);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* ⚡ 강조 텍스트 */
+  #ninja strong {
+    color: #ff4d4d;
+    text-shadow:
+      0 0 8px rgba(255, 0, 0, 0.4),
+      0 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* 💢 아이콘 포인트 */
+  #ninja i {
+    color: #ff1a1a;
+    transition: color 0.3s ease;
+  }
+  #ninja i:hover {
+    color: #ff6666;
+  }
+  
+  /* 🕰️ 프로젝트 기간 */
+  #ninja .project-period {
+    color: #ff9999;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(255, 100, 100, 0.4);
+    font-size: 1rem;
+  }
+  
 
 /* 닌자 아코디언 글자 색상 */
 #ninja .accordion-header {
@@ -2573,48 +2869,117 @@ body {
     color: #FFF8DC;
 }
 
-/* 콜로세움 워 아코디언 글자 색상 */
-#colosseum .accordion-header {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;  /* 흰색 */
+/* ⚔️ 콜로세움 워 - 고대 전장 테마 */
+#colosseum {
+  --section-bg: radial-gradient(circle at 40% 30%, #2f1d0f 0%, #3b2a19 35%, #1f1309 100%);
+  background: var(--section-bg);
+  font-family: 'Cinzel', 'Trajan Pro', 'Noto Serif KR', serif;
+  color: #f5e7c4;
+  padding: 70px 0;
+  position: relative;
+}
+
+/* 🏛️ 석조 질감 효과 */
+#colosseum::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/sandpaper.png');
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* 🏷️ 제목 */
+#colosseum .project-info h2 {
+  font-family: 'Cinzel Decorative', 'Trajan Pro', serif;
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #f9d976 0%, #f39c12 40%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.7),
+    0 0 25px rgba(255, 223, 0, 0.3);
+}
+/* 🏺 설명 텍스트 */
+#colosseum .project-description {
+    color: #fdf5e6; /* 밝은 베이지 */
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid rgba(255, 215, 0, 0.3);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+  }
+  
+  /* 🛡️ 아코디언 헤더 */
+  #colosseum .accordion-header {
+    background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    font-weight: 500;
+    backdrop-filter: blur(6px);
+    color: #fdf5e6; /* 설명 텍스트와 동일 톤 */
+    font-weight: 600;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
-}
-
-#colosseum .accordion-header:hover {
-    background: rgba(255, 215, 0, 0.2);
-    color: #ffd700;  /* 황금색 */
-}
-
-#colosseum .accordion-body {
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  #colosseum .accordion-header:hover {
+    background: rgba(255, 215, 0, 0.25);
+    color: #ffe066; /* 황금빛 강조 */
+    border-color: rgba(255, 215, 0, 0.5);
+    transform: translateY(-2px);
+  }
+  
+   /* ⚔️ 아코디언 본문 */
+   #colosseum .accordion-body {
+     color: #fdf5e6; /* 설명 텍스트와 동일한 밝은 베이지색 */
+     background: rgba(255, 255, 255, 0.05); /* 반투명 밝은톤으로 변경 */
+     border-radius: 8px;
+     padding: 12px 16px;
+     box-shadow: inset 0 0 8px rgba(255, 215, 0, 0.1);
+   }
+   
+   #colosseum .accordion-body li {
+     color: #fdf5e6; /* 설명 텍스트와 동일한 밝은 베이지색 */
+     margin-bottom: 4px;
+   }
+  
+  /* 🏹 아이콘 및 포인트 */
+  #colosseum i {
+    color: #ffd700; /* 황금색 포인트 */
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  #colosseum i:hover {
+    color: #ffe15d;
+    transform: scale(1.15);
+  }
+  
+  /* ⏳ 프로젝트 기간 */
+  #colosseum .project-period {
+    color: #ffecb3;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(255, 223, 0, 0.4);
+  }
+  
+  /* 아코디언 탭 */
+  #colosseum ~ .carousel-container .tab {
     color: #FFF8DC;  /* 밝은 베이지색 */
-}
-
-#colosseum .accordion-body li {
-    color: #deb887;  /* 중간 베이지색 */
-}
-
-#colosseum i {
-    color: #ffd700;  /* 황금색 포인트 */
-}
-
-/* 아코디언 플러스 아이콘 색상 */
-/* 콜로세움 워 섹션일 때 하단 카테고리 색상 */
-#colosseum ~ .carousel-container .tab {
-    color: #FFF8DC;  /* 밝은 베이지색 */
-}
-
-#colosseum ~ .carousel-container .tab.active {
+  }
+  #colosseum ~ .carousel-container .tab.active {
     color: #ffd700;  /* 황금색 */
     background: rgba(255, 215, 0, 0.2);
-}
-
-/* Strong 태그 색상 */
-#colosseum strong {
+  }
+  
+  /* Strong 태그 색상 */
+  #colosseum strong {
     color: #ffd700;  /* 황금색 */
-}
+  }
+  
 
 /* 군인 키우기 - 군사 테마 */
 #soldier {

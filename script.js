@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         geekble: ['PolyStone', '황야의 수호자'],
         spartacamp: ['Idle Soul'],
         school: ['ZEPETO'],
-        tksoft: ['닌자: 천년의 수련', '해와 달의 몰락', '콜로세움 워', 'Over Head', '군인 키우기', 'Run Block Run', 'Tinny Spaceship']
+        tksoft: ['닌자: 천년의 수련', '해와 달의 몰락', '콜로세움 워',  'Tinny Spaceship']
     };
     
     // 프로젝트 이름을 실제 HTML id로 매핑
@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
         '닌자: 천년의 수련': 'ninja',
         '해와 달의 몰락': 'moonfall',
         '콜로세움 워': 'colosseum',
-        'Over Head': 'overhead',
-        '군인 키우기': 'soldier',
-        'Run Block Run': 'rbr',
+        //'Over Head': 'overhead',
+        //'군인 키우기': 'soldier',
+        //'Run Block Run': 'rbr',
         'Tinny Spaceship': 'tinny',
         'PolyStone': 'polystone',
         '황야의 수호자': 'guardian',
@@ -343,4 +343,26 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
     });
+});
+
+// Contact 섹션 클릭 기능
+document.addEventListener('DOMContentLoaded', function() {
+    const contactSocialLinks = document.querySelector('.contact-social-links');
+    
+    if (contactSocialLinks) {
+        contactSocialLinks.addEventListener('click', function(e) {
+            // 클릭된 위치에 따라 다른 링크로 이동
+            const rect = this.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const centerX = rect.width / 2;
+            
+            if (clickX < centerX) {
+                // 왼쪽 절반 클릭 시 이메일 링크
+                window.location.href = 'mailto:suhya990312@gmail.com';
+            } else {
+                // 오른쪽 절반 클릭 시 GitHub 링크
+                window.open('https://github.com/faces0312', '_blank');
+            }
+        });
+    }
 });
