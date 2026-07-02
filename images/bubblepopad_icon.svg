@@ -1,0 +1,16 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="navy2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b2f57"/>
+      <stop offset="100%" stop-color="#0f1d38"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#navy2)"/>
+  <circle cx="62" cy="62" r="22" fill="#ff6b6b"/>
+  <circle cx="110" cy="52" r="18" fill="#ffd93d"/>
+  <circle cx="147" cy="75" r="20" fill="#6bffb8"/>
+  <circle cx="84" cy="96" r="17" fill="#6bc7ff"/>
+  <circle cx="125" cy="112" r="15" fill="#ff9ecb"/>
+  <polygon points="100,184 81,150 119,150" fill="#ffffff"/>
+  <circle cx="100" cy="143" r="12" fill="#ffffff"/>
+</svg>

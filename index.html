@@ -11,6 +11,201 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
 
+<style>
+/* PDF 변환을 위한 스타일 */
+@media print {
+  body {
+    margin: 0;
+    padding: 20px;
+    background: white !important;
+    color: black !important;
+  }
+  
+  .portfolio-container {
+    max-width: none !important;
+    width: 100% !important;
+  }
+  
+  .main-section {
+    display: block !important;
+  }
+  
+  .content-section {
+    display: block !important;
+    page-break-inside: avoid;
+    margin-bottom: 30px;
+  }
+  
+  .content-section:not(.active) {
+    display: none !important;
+  }
+  
+  .carousel-container {
+    display: none !important;
+  }
+  
+  .project-video {
+    display: none !important;
+  }
+  
+  .video-container {
+    display: none !important;
+  }
+  
+  iframe {
+    display: none !important;
+  }
+  
+  .accordion-body {
+    display: block !important;
+  }
+  
+  .accordion-header {
+    cursor: default !important;
+  }
+  
+  .accordion-header::after {
+    display: none !important;
+  }
+  
+  .glass {
+    background: white !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+  }
+  
+  .project-badges img {
+    max-width: 120px !important;
+    height: auto !important;
+  }
+  
+  .social-icon {
+    max-width: 24px !important;
+    height: 24px !important;
+  }
+  
+  .project-media img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .contact-wrapper {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+  }
+  
+  .contact-social-links a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .contact-social-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .role-item {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-left: 3px solid #007bff;
+    background: #f8f9fa;
+  }
+  
+  .role-item i {
+    margin-right: 8px;
+    color: #007bff;
+  }
+  
+  .project-description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .project-period {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    color: #333 !important;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .about-title {
+    color: #333 !important;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .about-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .project-links {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  
+  /* 페이지 나누기 */
+  .content-section {
+    page-break-before: auto;
+  }
+  
+  .content-section:first-child {
+    page-break-before: avoid;
+  }
+  
+  /* 모든 섹션을 표시 - JavaScript 제어 무시 */
+  .content-section {
+    display: block !important;
+  }
+  
+  /* JavaScript로 제어되는 active 클래스 무시 */
+  .content-section:not(.active) {
+    display: block !important;
+  }
+  
+  /* 탭 네비게이션 숨기기 */
+  .carousel-container {
+    display: none !important;
+  }
+  
+  /* 각 프로젝트 섹션 사이에 페이지 나누기 추가 */
+  .content-section:not(:first-child) {
+    page-break-before: always;
+    margin-top: 0;
+  }
+  
+  /* 프로젝트 섹션 내부에서 페이지 나누기 방지 */
+  .project-info {
+    page-break-inside: avoid;
+  }
+  
+  /* 아코디언 섹션에서 페이지 나누기 방지 */
+  .accordion {
+    page-break-inside: avoid;
+  }
+  
+  /* 프로젝트 미디어에서 페이지 나누기 방지 */
+  .project-media {
+    page-break-inside: avoid;
+  }
+}
+</style>
 
 </head>
 <body>
@@ -77,6 +272,253 @@
   
                       
                 </div>
+
+                <!-- 🧩 BubblePop Ad Generator 프로젝트 (퍼즐원스튜디오) -->
+<div class="content-section" id="bubblepopad">
+    <div class="project-media wide">
+        <img src="images/playablead_editor.png" alt="Playable AD Generator - 3D 모드 설정 패널 및 프리뷰" style="width:100%; height:auto; border-radius:16px; box-shadow:0 8px 25px rgba(0,0,0,0.3); margin-bottom:16px; display:block;">
+        <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center;">
+            <img src="images/playablead_portrait.png" alt="Playable AD Generator - Monster 모드 미리보기" style="height:320px; width:auto; max-width:100%; object-fit:contain; border-radius:16px; box-shadow:0 8px 25px rgba(0,0,0,0.3);">
+            <img src="images/playablead_3d.png" alt="Playable AD Generator - 3D 모드 미리보기" style="height:320px; width:auto; max-width:100%; object-fit:contain; border-radius:16px; box-shadow:0 8px 25px rgba(0,0,0,0.3);">
+        </div>
+    </div>
+
+    <div class="project-info">
+        <h2>Playable AD Generator</h2>
+        <p class="project-period">2026.05 ~ 2026.06</p>
+
+        <div class="project-badges">
+            <img alt="Made with HTML5"
+                 src="https://img.shields.io/badge/Made%20with-HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge">
+            <img alt="Runtime Node.js"
+                 src="https://img.shields.io/badge/Runtime-Node.js-339933?logo=node.js&logoColor=white&style=for-the-badge">
+            <img alt="3D Three.js"
+                 src="https://img.shields.io/badge/3D-Three.js-000000?logo=three.js&logoColor=white&style=for-the-badge">
+        </div>
+
+        <p class="project-description">
+            (주)퍼즐원스튜디오의 모바일 게임 <strong>BubblePop</strong>용 플레이어블 광고를 <strong>비개발자 직군도 직접 제작</strong>할 수 있도록
+            다양한 바리에이션을 추가한 툴 개발을 진행했습니다.<br><br>
+            <strong>Default·Monster·3D·Campaign·Infinite</strong> 등 다양한 게임 모드와, 발사 속도·버블 이미지·몬스터 연출 같은
+            세부 커스터마이징 옵션까지 에디터 전반을 직접 설계·구현했습니다.
+        </p>
+
+        <div class="accordion glass">
+            <button class="accordion-header">참여 역할</button>
+            <div class="accordion-body enhanced">
+                <div class="role-item">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <p><strong>Default·Monster·3D·Campaign·Infinite</strong> 등 전체 게임 모드를 직접 설계·구현</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-sliders"></i>
+                    <p>발사 속도, 버블·몬스터 이미지 등 <strong>세부 커스터마이징 옵션</strong>을 갖춘 Shooter·Bubble·Monster 에디터 설계</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-book"></i>
+                    <p>에디터 8종(Level·Board·Item·CTA·Shooter 등) 사용 가이드를 사내 위키에 문서화</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion glass">
+            <button class="accordion-header">기술 스택</button>
+            <div class="accordion-body enhanced">
+                <div class="role-item">
+                    <i class="fa-brands fa-node-js"></i>
+                    <p><strong>Vite + Node.js</strong> 기반 프론트엔드·백엔드 동시 실행 구조</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-cube"></i>
+                    <p><strong>Three.js</strong> 기반 3D 버블팝 템플릿 WebGL 렌더링</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-plug"></i>
+                    <p><strong>BubblePopCore 엔진 훅</strong>(onGameWin, onNextBubblePrepared 등) 연동</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-brands fa-html5"></i>
+                    <p>완성된 광고는 모든 에셋이 Base64로 포함된 <strong>단일 HTML 파일</strong>로 패키징되어 배포</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion glass">
+            <button class="accordion-header">성과</button>
+            <div class="accordion-body enhanced">
+                <div class="role-item">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <p>에디터 기반 워크플로우로 <strong>플레이어블 광고 제작 시간 단축</strong></p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-store"></i>
+                    <p><strong>AdMob·Vungle·Facebook·AppLovin 등 다중 매체</strong> Export 지원</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <p><strong>check_ad.py</strong> 스크립트로 매체별(Google·Moloco·Mintegral 등) 정책 위반 요소를 자동 검출하는 QA 체크 도입</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 🧩 DailyDiceQuest 프로젝트 (퍼즐원스튜디오) -->
+<div class="content-section" id="dailydicequest">
+    <div class="project-media wide">
+        <img src="images/dailydicequest_cover.svg" alt="DailyDiceQuest">
+    </div>
+
+    <div class="project-info">
+        <h2>DailyDiceQuest</h2>
+        <p class="project-period">2026.06 ~ 2026.07</p>
+
+        <div class="project-badges">
+            <img alt="Made with Unity"
+                 src="https://img.shields.io/badge/Made%20with-Unity-000000?logo=unity&logoColor=white&style=for-the-badge">
+            <img alt="Developed with C#"
+                 src="https://img.shields.io/badge/Developed%20with-C%23-239120?logo=csharp&logoColor=white&style=for-the-badge">
+            <img alt="AI Claude"
+                 src="https://img.shields.io/badge/AI-Claude-D97757?style=for-the-badge&logo=claude&logoColor=white">
+            <img alt="AI Gemini CLI"
+                 src="https://img.shields.io/badge/AI-Gemini%20CLI-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white">
+        </div>
+
+        <p class="project-description">
+            (주)퍼즐원스튜디오의 여러 퍼즐 타이틀에 반복 적용할 수 있는 <strong>재사용형 데일리 이벤트 모듈</strong>
+            (퀘스트 달성 → 주사위 획득 → 보드 이동 → 보상 획득)을 직접 설계·개발했습니다.<br><br>
+            코어 로직과 타이틀별 브릿지 어댑터를 분리한 <strong>의존성 역전(DI) 구조</strong>로 시스템을 구축하고, 신규 타이틀 온보딩을 위한
+            <strong>Bridge Generator·AI Planner 에디터 자동화 툴</strong>까지 함께 제작해 Word Mind 타이틀에 실제 적용했습니다.
+        </p>
+
+        <div class="accordion glass">
+            <button class="accordion-header">시스템 설계 및 개발</button>
+            <div class="accordion-body enhanced">
+                <div class="role-item">
+                    <i class="fa-solid fa-sitemap"></i>
+                    <p><strong>Title-Agnostic 코어</strong> + 타이틀별 Bridge 어댑터 분리 구조 개발 (IDiceQuestHandler 연동 계약 설계)</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-database"></i>
+                    <p>보드·퀘스트·보상을 전부 <strong>ScriptableObject</strong> 데이터로 분리해 기획자가 직접 튜닝 가능하도록 구현</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-earth-asia"></i>
+                    <p>국가별 기능 on/off, 요일별 난이도 테이블 등 <strong>운영 유연성</strong>을 모듈 차원에서 구현</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion glass">
+            <button class="accordion-header">온보딩 자동화 툴 개발</button>
+            <div class="accordion-body enhanced">
+                <div class="role-item">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <p><strong>Bridge Generator</strong> 제작 — 네임스페이스·Wallet 연동 코드를 자동 생성하는 에디터 툴 개발</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-robot"></i>
+                    <p><strong>AI Planner</strong> 제작 — 보드·퀘스트 데이터셋 자동 구성 기능 개발</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-file-code"></i>
+                    <p>AI 연동 가이드(.md) 자동 생성 기능을 구현해 트리거 코드 삽입을 AI 코딩 어시스턴트에 위임 가능하도록 설계</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion glass">
+            <button class="accordion-header">적용 사례 &amp; 개선 제안</button>
+            <div class="accordion-body enhanced">
+                <div class="role-item">
+                    <i class="fa-solid fa-dice"></i>
+                    <p><strong>Word Mind</strong> 타이틀에 직접 적용 (28칸 보드, 퀘스트 6종, 1일 최대 15개 주사위 획득 구조 구성)</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <p>개발 과정에서 모듈 구조적 리스크를 식별하고 개선안 도출 (국가 제한 하드코딩 → Remote Config 전환 등)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 🧩 WordsCrush 기술 분석 프로젝트 (퍼즐원스튜디오) -->
+<div class="content-section" id="wordscrush">
+    <div class="project-media wide">
+        <img src="images/wordscrush_cover.svg" alt="WordsCrush 기술 분석">
+    </div>
+
+    <div class="project-info">
+        <h2>WordsCrush 기술 분석</h2>
+        <p class="project-period">2026.02 ~ 2026.03</p>
+
+        <div class="project-badges">
+            <img alt="Made with Unity"
+                 src="https://img.shields.io/badge/Made%20with-Unity-000000?logo=unity&logoColor=white&style=for-the-badge">
+            <img alt="Developed with C#"
+                 src="https://img.shields.io/badge/Developed%20with-C%23-239120?logo=csharp&logoColor=white&style=for-the-badge">
+            <img alt="Type Code Analysis"
+                 src="https://img.shields.io/badge/Type-Code%20Analysis-764ba2?style=for-the-badge">
+        </div>
+
+        <p class="project-description">
+            (주)퍼즐원스튜디오의 워드 퍼즐 게임 <strong>WordsCrush</strong> 클라이언트 코드베이스를 정적 분석하여
+            카메라·해상도 대응 구조와 Zeus 인증 기반의 <strong>Band(길드)·Billboard(랭킹)·ForbesRace(시즌 경쟁 이벤트)</strong>
+            3개 소셜/라이브옵스 시스템 아키텍처를 코드 근거와 함께 문서화했습니다.
+        </p>
+
+        <div class="accordion glass">
+            <button class="accordion-header">클라이언트 구조 분석</button>
+            <div class="accordion-body enhanced">
+                <div class="role-item">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <p><strong>CanvasScaler</strong> 기반 다중 해상도 대응 구조 파악 및 미사용(죽은) 분기 로직 식별</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-key"></i>
+                    <p><strong>Zeus 인증 서버</strong>를 중심으로 Band/Billboard가 AccessToken을 공유하는 연계 구조 정리</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-list-check"></i>
+                    <p>오브젝트 풀링, UniTask 비동기 처리, DOTween 연출, 가상화 리스트 등 실무 패턴 12가지 정리</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion glass">
+            <button class="accordion-header">Band · Billboard · ForbesRace</button>
+            <div class="accordion-body enhanced">
+                <div class="role-item">
+                    <i class="fa-solid fa-people-group"></i>
+                    <p><strong>Band</strong> — 길드 생성·채팅·팀 스코어 시스템, 템플릿 메서드 패턴으로 타이틀별 커스터마이징</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-ranking-star"></i>
+                    <p><strong>Billboard</strong> — Players/Team/Friends × Global/Local/HallOfFame 조합 랭킹, 시즌제 지원</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                    <p><strong>ForbesRace</strong> — 레벨 클리어 기반 시즌 경쟁 이벤트, 전략 패턴으로 타이틀별 티어 로직 주입</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion glass">
+            <button class="accordion-header">성과</button>
+            <div class="accordion-body enhanced">
+                <div class="role-item">
+                    <i class="fa-solid fa-bolt"></i>
+                    <p>합류 초기 프로덕션 코드베이스를 빠르게 파악하고 팀 내부 기술 문서로 공유</p>
+                </div>
+                <div class="role-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <p>사내 기술 패턴을 구조화해 후속 기능 개발·신규 인원 온보딩 자료로 활용 가능하게 정리</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <!-- 🧩 PolyStone 프로젝트 -->
 <div class="content-section" id="polystone">
@@ -1055,6 +1497,14 @@ target="_blank" class="tab" data-category="resume">
 </a>
 
                 
+                <!-- 퍼즐원스튜디오 카테고리 -->
+                <div class="tab" data-category="puzzleone">
+                    <div class="tab-icon">
+                        <img src="images/puzzleone_icon.svg" alt="퍼즐원스튜디오">
+                    </div>
+                    <span class="tab-label">퍼즐원스튜디오</span>
+                </div>
+
                 <!-- 긱블 카테고리 -->
                 <div class="tab" data-category="geekble">
                     <div class="tab-icon">

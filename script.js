@@ -9,12 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const subIcons = {
         profile: ['Profile'],
         home: ['Home'],
+        puzzleone: ['Playable AD Generator', 'DailyDiceQuest', 'WordsCrush 기술 분석'],
         geekble: ['PolyStone', '황야의 수호자'],
         spartacamp: ['Idle Soul'],
         school: ['ZEPETO'],
         tksoft: ['닌자: 천년의 수련', '해와 달의 몰락', '콜로세움 워',  'Tinny Spaceship']
     };
-    
+
     // 프로젝트 이름을 실제 HTML id로 매핑
     const projectIdMap = {
         '닌자: 천년의 수련': 'ninja',
@@ -27,8 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
         'PolyStone': 'polystone',
         '황야의 수호자': 'guardian',
         'Idle Soul': 'idlesoul',
-        'ZEPETO': 'zepeto'
+        'ZEPETO': 'zepeto',
+        'Playable AD Generator': 'bubblepopad',
+        'DailyDiceQuest': 'dailydicequest',
+        'WordsCrush 기술 분석': 'wordscrush'
     };
+
+    // png 대신 svg 아이콘을 사용하는 항목(퍼즐원스튜디오 신규 프로젝트)
+    const svgIconIds = new Set(['bubblepopad', 'dailydicequest', 'wordscrush']);
     
     // Initialize - show home section
     showSection('home');
@@ -152,9 +159,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         apps.forEach(app => {
             const appId = projectIdMap[app] || app.toLowerCase().replace(/\s+/g, '').replace(/[^\w]/g, '');
-            
-            // 아이콘 파일 이름 규칙: appId + "_icon.png"
-            const iconPath = `images/${appId}_icon.png`;
+
+            // 아이콘 파일 이름 규칙: appId + "_icon.png" (일부 신규 항목은 svg 사용)
+            const iconExt = svgIconIds.has(appId) ? 'svg' : 'png';
+            const iconPath = `images/${appId}_icon.${iconExt}`;
         
             content += `
                 <div class="app-item" data-link="${appId}">

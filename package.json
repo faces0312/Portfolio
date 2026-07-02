@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-pdf-converter",
+  "version": "1.0.0",
+  "description": "서현석 포트폴리오 HTML을 PDF로 변환하는 도구",
+  "main": "convert_to_pdf.js",
+  "scripts": {
+    "convert": "node convert_to_pdf.js",
+    "install-deps": "npm install"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  },
+  "keywords": ["portfolio", "pdf", "conversion", "puppeteer"],
+  "author": "서현석",
+  "license": "MIT"
+}
+
