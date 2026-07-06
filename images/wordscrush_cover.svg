@@ -1,30 +1,55 @@
-<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 630" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#1b2f57"/>
       <stop offset="100%" stop-color="#0f1d38"/>
     </linearGradient>
   </defs>
-  <rect width="800" height="400" fill="url(#bg3)"/>
-  <g>
-    <rect x="220" y="150" width="60" height="70" rx="10" fill="#ffffff"/>
-    <rect x="290" y="150" width="60" height="70" rx="10" fill="#ffffff"/>
-    <rect x="360" y="150" width="60" height="70" rx="10" fill="#ffffff"/>
-    <rect x="430" y="150" width="60" height="70" rx="10" fill="#ffffff"/>
-    <rect x="500" y="150" width="60" height="70" rx="10" fill="#ffffff"/>
-    <text x="250" y="200" font-size="34" font-weight="700" fill="#16294b" text-anchor="middle">W</text>
-    <text x="320" y="200" font-size="34" font-weight="700" fill="#16294b" text-anchor="middle">O</text>
-    <text x="390" y="200" font-size="34" font-weight="700" fill="#16294b" text-anchor="middle">R</text>
-    <text x="460" y="200" font-size="34" font-weight="700" fill="#16294b" text-anchor="middle">D</text>
-    <text x="530" y="200" font-size="34" font-weight="700" fill="#16294b" text-anchor="middle">S</text>
-  </g>
-  <text x="400" y="280" font-family="'Poppins', Arial, sans-serif" font-size="40" font-weight="700" fill="#ffffff" text-anchor="middle">WordsCrush 기술 분석</text>
-  <text x="400" y="315" font-family="Arial, sans-serif" font-size="18" fill="#c7d2e8" text-anchor="middle">클라이언트 구조 · Band · Billboard · ForbesRace</text>
+  <rect width="900" height="630" fill="url(#bg3)"/>
 
-  <!-- Puzzle One 로고 배지 -->
-  <g transform="translate(28,28)">
-    <rect x="0" y="0" width="88" height="30" rx="15" fill="#ffffff"/>
-    <text x="44" y="20" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#16294b" text-anchor="middle">PUZZLE</text>
-    <text x="122" y="21" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="800" fill="#ffffff" text-anchor="middle">ONE</text>
+  <g transform="translate(61,0)">
+    <!-- Puzzle One 로고 배지 -->
+    <g transform="translate(28,20)">
+      <rect x="0" y="0" width="88" height="30" rx="15" fill="#ffffff"/>
+      <text x="44" y="20" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#16294b" text-anchor="middle">PUZZLE</text>
+      <text x="122" y="21" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="800" fill="#ffffff" text-anchor="middle">ONE</text>
+    </g>
+
+    <text x="400" y="48" font-family="'Poppins', Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff" text-anchor="middle">아웃게임(소셜) 시스템</text>
+    <text x="400" y="76" font-family="Arial, sans-serif" font-size="19" fill="#c7d2e8" text-anchor="middle">Band · Billboard · ForbesRace 연동 구조</text>
+
+    <!-- 연결선 (허브 중심에서 각 노드로, 허브 뒤로 가려짐) -->
+    <line x1="400" y1="350" x2="188" y2="172" stroke="#ffd93d" stroke-width="3.5"/>
+    <line x1="400" y1="350" x2="612" y2="172" stroke="#ffd93d" stroke-width="3.5"/>
+    <line x1="400" y1="350" x2="400" y2="512" stroke="#ffd93d" stroke-width="3.5"/>
+
+    <!-- Zeus 인증 허브 -->
+    <circle cx="400" cy="350" r="82" fill="#ffd93d"/>
+    <text x="400" y="338" font-family="'Poppins', Arial, sans-serif" font-size="27" font-weight="800" fill="#16294b" text-anchor="middle">Zeus</text>
+    <text x="400" y="362" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#16294b" text-anchor="middle">단일 인증 서버</text>
+    <text x="400" y="382" font-family="Arial, sans-serif" font-size="14" fill="#16294b" text-anchor="middle">AccessToken 공유</text>
+
+    <!-- Band 노드 -->
+    <rect x="50" y="100" width="276" height="144" rx="20" fill="#ffffff"/>
+    <text x="188" y="140" font-family="'Poppins', Arial, sans-serif" font-size="27" font-weight="700" fill="#16294b" text-anchor="middle">Band</text>
+    <text x="188" y="170" font-family="Arial, sans-serif" font-size="16" fill="#4a5a7a" text-anchor="middle">길드 생성 · 채팅 · 팀 스코어</text>
+    <text x="188" y="192" font-family="Arial, sans-serif" font-size="14" fill="#7a89a8" text-anchor="middle">템플릿 메서드 패턴</text>
+    <text x="188" y="212" font-family="Arial, sans-serif" font-size="14" fill="#7a89a8" text-anchor="middle">게임 정책별 커스터마이징</text>
+
+    <!-- Billboard 노드 -->
+    <rect x="474" y="100" width="276" height="144" rx="20" fill="#ffffff"/>
+    <text x="612" y="140" font-family="'Poppins', Arial, sans-serif" font-size="27" font-weight="700" fill="#16294b" text-anchor="middle">Billboard</text>
+    <text x="612" y="170" font-family="Arial, sans-serif" font-size="16" fill="#4a5a7a" text-anchor="middle">Players · Team · Friends</text>
+    <text x="612" y="192" font-family="Arial, sans-serif" font-size="14" fill="#7a89a8" text-anchor="middle">Global · Local · HallOfFame</text>
+    <text x="612" y="212" font-family="Arial, sans-serif" font-size="14" fill="#7a89a8" text-anchor="middle">시즌제 랭킹 지원</text>
+
+    <!-- ForbesRace 노드 -->
+    <rect x="268" y="452" width="264" height="120" rx="20" fill="#ffffff"/>
+    <text x="400" y="494" font-family="'Poppins', Arial, sans-serif" font-size="25" font-weight="700" fill="#16294b" text-anchor="middle">ForbesRace</text>
+    <text x="400" y="520" font-family="Arial, sans-serif" font-size="16" fill="#4a5a7a" text-anchor="middle">레벨 클리어 기반 시즌 경쟁</text>
+    <text x="400" y="542" font-family="Arial, sans-serif" font-size="14" fill="#7a89a8" text-anchor="middle">전략 패턴으로 티어 로직 주입</text>
+
+    <!-- 캡션 -->
+    <text x="400" y="605" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffd93d" text-anchor="middle">WordsCrush 타이틀 적용 — 사내 공용 패키지를 게임 정책에 맞게 연동</text>
   </g>
 </svg>

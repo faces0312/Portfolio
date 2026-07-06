@@ -1026,7 +1026,7 @@ body {
 .bubble-content {
     display: flex;
     flex-direction: row; /* 가로 방향 */
-    align-items: center; /* 세로 중앙정렬 */
+    align-items: flex-start; /* 아이콘 높이를 텍스트 줄 수와 무관하게 상단 정렬 */
     justify-content: flex-start; /* 왼쪽부터 채움 */
     gap: 16px; /* 아이템 간격 */
     overflow-x: auto; /* 넘치면 좌우 스크롤 */
@@ -1744,7 +1744,7 @@ body {
   .bubble-content {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start; /* 아이콘 높이를 텍스트 줄 수와 무관하게 상단 정렬 */
     justify-content: center; /* 중앙 정렬 */
     gap: 20px;
     padding: 20px 30px;

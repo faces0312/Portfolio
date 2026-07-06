@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const subIcons = {
         profile: ['Profile'],
         home: ['Home'],
-        puzzleone: ['Playable AD Generator', 'DailyDiceQuest', 'WordsCrush 기술 분석'],
+        puzzleone: ['Playable AD Generator', 'DailyDiceQuest', '아웃게임(소셜) 시스템'],
         geekble: ['PolyStone', '황야의 수호자'],
         spartacamp: ['Idle Soul'],
         school: ['ZEPETO'],
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'ZEPETO': 'zepeto',
         'Playable AD Generator': 'bubblepopad',
         'DailyDiceQuest': 'dailydicequest',
-        'WordsCrush 기술 분석': 'wordscrush'
+        '아웃게임(소셜) 시스템': 'wordscrush'
     };
 
     // png 대신 svg 아이콘을 사용하는 항목(퍼즐원스튜디오 신규 프로젝트)

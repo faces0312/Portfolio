@@ -1,33 +1,71 @@
-<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 650" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#1b2f57"/>
       <stop offset="100%" stop-color="#0f1d38"/>
     </linearGradient>
+    <marker id="ddqArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ffd93d"/>
+    </marker>
+    <marker id="ddqArrowDim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ffffff" fill-opacity="0.6"/>
+    </marker>
   </defs>
-  <rect width="800" height="400" fill="url(#bg2)"/>
-  <g opacity="0.9">
-    <rect x="60" y="300" width="46" height="46" rx="8" fill="#ffffff" opacity="0.12"/>
-    <rect x="112" y="300" width="46" height="46" rx="8" fill="#ffffff" opacity="0.2"/>
-    <rect x="164" y="300" width="46" height="46" rx="8" fill="#ffd93d"/>
-    <rect x="216" y="300" width="46" height="46" rx="8" fill="#ffffff" opacity="0.12"/>
-    <rect x="268" y="300" width="46" height="46" rx="8" fill="#ffffff" opacity="0.2"/>
-  </g>
-  <rect x="600" y="60" width="130" height="130" rx="24" fill="#ffffff" transform="rotate(8 665 125)"/>
-  <g transform="rotate(8 665 125)">
-    <circle cx="633" cy="93" r="11" fill="#16294b"/>
-    <circle cx="697" cy="93" r="11" fill="#16294b"/>
-    <circle cx="665" cy="125" r="11" fill="#16294b"/>
-    <circle cx="633" cy="157" r="11" fill="#16294b"/>
-    <circle cx="697" cy="157" r="11" fill="#16294b"/>
-  </g>
-  <text x="380" y="150" font-family="'Poppins', Arial, sans-serif" font-size="46" font-weight="700" fill="#ffffff" text-anchor="middle">DailyDiceQuest</text>
-  <text x="380" y="190" font-family="Arial, sans-serif" font-size="20" fill="#c7d2e8" text-anchor="middle">재사용형 데일리 이벤트 모듈 설계</text>
+  <rect width="900" height="650" fill="url(#bg2)"/>
 
-  <!-- Puzzle One 로고 배지 -->
-  <g transform="translate(28,28)">
-    <rect x="0" y="0" width="88" height="30" rx="15" fill="#ffffff"/>
-    <text x="44" y="20" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#16294b" text-anchor="middle">PUZZLE</text>
-    <text x="122" y="21" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="800" fill="#ffffff" text-anchor="middle">ONE</text>
+  <g transform="translate(40,0)">
+    <!-- Puzzle One 로고 배지 -->
+    <g transform="translate(28,20)">
+      <rect x="0" y="0" width="88" height="30" rx="15" fill="#ffffff"/>
+      <text x="44" y="20" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="800" fill="#16294b" text-anchor="middle">PUZZLE</text>
+      <text x="122" y="21" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="800" fill="#ffffff" text-anchor="middle">ONE</text>
+    </g>
+
+    <text x="400" y="52" font-family="'Poppins', Arial, sans-serif" font-size="44" font-weight="700" fill="#ffffff" text-anchor="middle">DailyDiceQuest</text>
+    <text x="400" y="82" font-family="Arial, sans-serif" font-size="20" fill="#c7d2e8" text-anchor="middle">Core - Adapter 구조 설계</text>
+
+    <!-- Data box -->
+    <rect x="35" y="110" width="235" height="78" rx="18" fill="#ffffff" fill-opacity="0.95"/>
+    <text x="153" y="142" font-family="'Poppins', Arial, sans-serif" font-size="24" font-weight="700" fill="#16294b" text-anchor="middle">Data</text>
+    <text x="153" y="168" font-family="Arial, sans-serif" font-size="15.5" fill="#4a5a7a" text-anchor="middle">DiceQuestDataSO · ElementSO</text>
+
+    <!-- Data -> Core -->
+    <line x1="153" y1="188" x2="153" y2="218" stroke="#ffd93d" stroke-width="4" marker-end="url(#ddqArrow)"/>
+
+    <!-- Core box -->
+    <rect x="35" y="221" width="235" height="185" rx="20" fill="#ffffff"/>
+    <text x="153" y="282" font-family="'Poppins', Arial, sans-serif" font-size="39" font-weight="700" fill="#16294b" text-anchor="middle">Core</text>
+    <text x="153" y="318" font-family="Arial, sans-serif" font-size="20" fill="#4a5a7a" text-anchor="middle">Title-Agnostic 로직</text>
+    <text x="153" y="348" font-family="Arial, sans-serif" font-size="16.5" fill="#7a89a8" text-anchor="middle">DailyDiceQuestManager</text>
+
+    <!-- Interface pill -->
+    <text x="420" y="272" font-family="Arial, sans-serif" font-size="19" fill="#c7d2e8" text-anchor="middle">연동 계약 (8개 메서드)</text>
+    <rect x="310" y="288" width="220" height="70" rx="35" fill="#ffd93d"/>
+    <text x="420" y="333" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#16294b" text-anchor="middle">IDiceQuestHandler</text>
+
+    <!-- Core -> Interface -->
+    <line x1="270" y1="313" x2="307" y2="323" stroke="#ffd93d" stroke-width="4.5" marker-end="url(#ddqArrow)"/>
+
+    <!-- Bridge 1 (existing: Word Mind) -->
+    <rect x="595" y="170" width="195" height="150" rx="18" fill="#ffffff"/>
+    <text x="693" y="215" font-family="'Poppins', Arial, sans-serif" font-size="28" font-weight="700" fill="#16294b" text-anchor="middle">Bridge</text>
+    <text x="693" y="248" font-family="Arial, sans-serif" font-size="18" fill="#4a5a7a" text-anchor="middle">Word Mind</text>
+    <text x="693" y="272" font-family="Arial, sans-serif" font-size="15.5" fill="#7a89a8" text-anchor="middle">Wallet · Level 연동</text>
+    <text x="693" y="294" font-family="Arial, sans-serif" font-size="15.5" fill="#7a89a8" text-anchor="middle">28칸 보드 · 퀘스트 6종</text>
+
+    <!-- Bridge 2 (extensible, dashed) -->
+    <rect x="595" y="350" width="195" height="150" rx="18" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.5" stroke-width="3.5" stroke-dasharray="9 9"/>
+    <text x="693" y="395" font-family="'Poppins', Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">Bridge</text>
+    <text x="693" y="428" font-family="Arial, sans-serif" font-size="18" fill="#c7d2e8" text-anchor="middle">신규 타이틀 +</text>
+    <text x="693" y="452" font-family="Arial, sans-serif" font-size="15.5" fill="#c7d2e8" text-anchor="middle">네임스페이스 자동 스캔</text>
+    <text x="693" y="474" font-family="Arial, sans-serif" font-size="15.5" fill="#c7d2e8" text-anchor="middle">초안 자동 생성</text>
+
+    <!-- Interface -> Bridges -->
+    <line x1="530" y1="300" x2="592" y2="245" stroke="#ffd93d" stroke-width="4" marker-end="url(#ddqArrow)"/>
+    <line x1="530" y1="346" x2="592" y2="425" stroke="#ffffff" stroke-opacity="0.6" stroke-width="3.5" stroke-dasharray="8 8" marker-end="url(#ddqArrowDim)"/>
+
+    <!-- 캡션 -->
+    <text x="400" y="560" font-family="Arial, sans-serif" font-size="19" fill="#c7d2e8" text-anchor="middle">Bridge Generator · AI Planner로 신규 타이틀 온보딩 자동화</text>
+    <text x="400" y="592" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffd93d" text-anchor="middle">신규 타이틀 이식 비용 약 1주 → 1일로 단축</text>
   </g>
 </svg>
