@@ -1,4 +1,70 @@
-/* Reset and Base Styles */
+/* =========================================================
+   서현석 포트폴리오 — style.css
+   -----------------------------------------------------------
+   목차 (Table of Contents)
+   1. Design Tokens (:root)
+   2. Reset & Base
+   3. Accessibility & Motion (focus-visible, reduced-motion)
+   4. Shared Animations (@keyframes)
+   5. Layout (Portfolio Container / Sections)
+   6. Home / About / Profile
+   7. Project Media, Info, Links
+   8. Accordion & Project Details
+   9. Bottom Tab Bar / Carousel / Bubble Menu
+   10. App Items
+   11. Contact (links, social, glass button)
+   12. Portfolio Home (Awards / Timeline / Skills)
+   13. Glassmorphism Utilities
+   14. Per-Project Themes (#polystone, #idlesoul, #guardian,
+       #zepeto, #tinny, #moonfall, #ninja, #colosseum, #soldier,
+       #rbr, #overhead, #bubblepopad/#dailydicequest/#wordscrush)
+   ========================================================= */
+
+/* -----------------------------------------------------------
+   1. Design Tokens
+   공통으로 반복 사용되는 브랜드 색상/그림자/모션 값을 변수로 정리.
+   (프로젝트별 테마 섹션은 각자의 고유한 팔레트를 유지하기 위해
+    이 변수들을 강제하지 않음)
+   ----------------------------------------------------------- */
+:root {
+  /* Brand colors */
+  --color-primary: #667eea;
+  --color-primary-dark: #764ba2;
+  --color-accent: #526dff; /* == rgb(82, 109, 255) */
+  --color-gold: #ffd700;
+  --color-white: #ffffff;
+
+  /* Common glass-surface opacities */
+  --glass-bg-soft: rgba(255, 255, 255, 0.05);
+  --glass-bg-medium: rgba(255, 255, 255, 0.1);
+  --glass-bg-strong: rgba(255, 255, 255, 0.15);
+  --glass-border-soft: rgba(255, 255, 255, 0.1);
+  --glass-border-medium: rgba(255, 255, 255, 0.2);
+
+  /* Shadows */
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+  /* Motion */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Focus ring (accessibility) */
+  --focus-ring-color: var(--color-accent);
+  --focus-ring: 0 0 0 3px rgba(82, 109, 255, 0.5);
+}
+
+/* -----------------------------------------------------------
+   2. Reset and Base Styles
+   ----------------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +74,49 @@
 /* 리스트 점 제거 */
 ul, ol {
     list-style: none;
+}
+
+/* -----------------------------------------------------------
+   3. Accessibility & Motion
+   ----------------------------------------------------------- */
+
+/* 키보드 포커스 시 명확한 시각적 표시 (마우스 클릭 시에는 표시 안 함) */
+a:focus-visible,
+button:focus-visible,
+.tab:focus-visible,
+.accordion-header:focus-visible,
+.copy-btn:focus-visible,
+.contact-item:focus-visible,
+.contact-social-links a:focus-visible,
+.app-item:focus-visible,
+.project-links a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--focus-ring-color);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+}
+
+/* 모션에 민감한 사용자를 위한 애니메이션/전환 축소 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* -----------------------------------------------------------
+   4. Shared Animations
+   (fadeIn은 여러 곳에서 재사용되므로 한 곳에서만 정의)
+   ----------------------------------------------------------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* 전체 배경이 섹션마다 끊기지 않고 완전히 이어지도록 */
@@ -55,7 +164,7 @@ body {
 .about-title {
     font-size: 2.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #667eea, #526dff);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 30px;
@@ -69,7 +178,7 @@ body {
 }
 
 .about-content strong {
-    color: rgb(82, 109, 255);
+    color: var(--color-accent);
     font-weight: 600;
 }
 
@@ -175,7 +284,7 @@ body {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 60px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -207,7 +316,7 @@ body {
 .profile-card h3 {
     font-size: 1.3rem;
     margin-bottom: 20px;
-    color: #667eea;
+    color: var(--color-primary);
 }
 
 .profile-card p {
@@ -217,18 +326,6 @@ body {
 }
 
 /* Project Section Styles */
-/* 중앙 정렬/쏠림 방지용 */
-.project-media,
-.project-info {
-    flex: 1;
-    max-width: none;
-    margin: 0;
-    padding: 0;                 /* 0 60px → 0으로 변경 */
-    overflow-x: hidden;
-    position: relative;
-    box-sizing: border-box;
-}
-
 /* 일반 프로젝트 이미지 (기존 유지) */
 .project-media img {
     width: 100%;
@@ -452,13 +549,7 @@ body {
      border-color: rgba(34, 197, 94, 0.5);
      opacity: 1;
    }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
 
-  
 .contact-links {
     display: flex;
     justify-content: center;
@@ -482,22 +573,6 @@ body {
     filter: grayscale(0%) brightness(1.1);
     opacity: 1;
   }
-  
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    margin-top: 40px;
-    margin-bottom: 10px;
-    animation: fadeIn 1s ease-in-out;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
   
 .social-icon {
     width: 34px;
@@ -541,12 +616,12 @@ body {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #667eea;
+    color: var(--color-primary);
 }
 
 .project-period {
     font-size: 1rem;
-    color: #667eea;
+    color: var(--color-primary);
     margin-bottom: 15px;
     font-weight: 500;
     opacity: 0.9;
@@ -554,7 +629,7 @@ body {
 
 .project-tags {
     font-size: 1.1rem;
-    color: #667eea;
+    color: var(--color-primary);
     margin-bottom: 30px;
     font-weight: 500;
 }
@@ -573,17 +648,17 @@ body {
 }
 
 .project-links a {
-    color: #667eea;
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 500;
     padding: 12px 24px;
-    border: 2px solid #667eea;
+    border: 2px solid var(--color-primary);
     border-radius: 30px;
     transition: all 0.3s ease;
 }
 
 .project-links a:hover {
-    background: #667eea;
+    background: var(--color-primary);
     color: #ffffff;
     transform: translateY(-2px);
 }
@@ -618,7 +693,7 @@ body {
     padding: 20px 25px;
     background: transparent;
     border: none;
-    color: rgb(82, 109, 255);
+    color: var(--color-accent);
     font-size: 1.2rem;
     font-weight: 600;
     text-align: left;
@@ -635,7 +710,7 @@ body {
     content: '+';
     font-size: 1.5rem;
     font-weight: 300;
-    color: rgb(82, 109, 255);
+    color: var(--color-accent);
     transition: transform 0.3s ease;
 }
 
@@ -644,7 +719,7 @@ body {
 }
 
 .accordion-header:hover {
-    color: #667eea;
+    color: var(--color-primary);
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -703,7 +778,7 @@ body {
   
   .role-item i {
     font-size: 1.3rem;
-    color: rgb(82, 109, 255);
+    color: var(--color-accent);
     flex-shrink: 0;
   }
   
@@ -715,7 +790,7 @@ body {
   }
   
   .role-item strong {
-    color: rgb(82, 109, 255);
+    color: var(--color-accent);
     font-weight: 600;
   }
 
@@ -991,7 +1066,7 @@ body {
 
 .tab-label {
     font-size: 1.4rem;
-    color: rgb(82, 109, 255);
+    color: var(--color-accent);
     font-weight: 500;
     text-align: center;
     line-height: 1.1;
@@ -1000,26 +1075,8 @@ body {
 }
 
 .tab.active .tab-label {
-    color: #667eea;
+    color: var(--color-primary);
     font-weight: 600;
-}
-
-/* Bubble */
-.bubble {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    display: none;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 2000;
-    margin-bottom: 15px;
-}
-
-.bubble.show {
-    opacity: 1;
-    display: block;
 }
 
 /* 말풍선 안 컨테이너를 가로 정렬 */
@@ -1086,7 +1143,7 @@ body {
 .bubble-content .app-name {
     font-size: 14px;
     font-weight: 600;
-    color: rgb(82, 109, 255);
+    color: var(--color-accent);
     text-align: center;
     text-shadow: none;
     line-height: 1.3;
@@ -1182,7 +1239,7 @@ body {
 }
 
 .app-item:hover .app-icon {
-    border-color: #667eea;
+    border-color: var(--color-primary);
     box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
 }
 
@@ -1210,7 +1267,7 @@ body {
 }
 
 .app-item:hover .app-name {
-    color: #667eea;
+    color: var(--color-primary);
     font-weight: 600;
 }
 
@@ -1434,22 +1491,10 @@ body {
     }
 }
 
-/* Smooth Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* ===== Portfolio Home (Awards / Timeline / Skills 3단 섹션) ===== */
 .portfolio-home.glass-layout {
   font-family: 'Inter', sans-serif;
-  color: rgb(82, 109, 255);
+  color: var(--color-accent);
   padding: 20px 60px 60px 60px;
   text-align: center;
   background: transparent; /* 기존 포트폴리오 배경 그대로 */
@@ -1465,7 +1510,7 @@ body {
 .main-title {
   font-size: 3.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #667eea, #526dff);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 40px;
@@ -1487,7 +1532,7 @@ body {
 
 .contact-box h2 {
   font-size: 1.1rem;
-  color: rgb(82, 109, 255);
+  color: var(--color-accent);
   margin-bottom: 15px;
   border-bottom: 1px solid rgba(82, 109, 255, 0.4);
   padding-bottom: 8px;
@@ -1502,7 +1547,7 @@ body {
 
 .contact-row span {
   font-weight: 600;
-  color: #667eea;
+  color: var(--color-primary);
 }
 
 .contact-row a {
@@ -1512,7 +1557,7 @@ body {
 }
 
 .contact-row a:hover {
-  color: rgb(82, 109, 255);
+  color: var(--color-accent);
 }
 
 /* 3단 구성 - 2x2 그리드 레이아웃 */
@@ -1564,7 +1609,7 @@ body {
 .glass-box h2 {
   font-size: 1.6rem;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #667eea, #526dff);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1592,7 +1637,7 @@ body {
   left: 25px;
   width: 3px;
   height: calc(100% - 80px);
-  background: linear-gradient(180deg, #667eea, #526dff);
+  background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
   border-radius: 2px;
 }
 .timeline-item {
@@ -1607,12 +1652,12 @@ body {
   height: 20px;
   border-radius: 50%;
   background: white;
-  border: 5px solid #667eea;
+  border: 5px solid var(--color-primary);
   box-shadow: 0 0 10px rgba(82, 109, 255, 0.5);
 }
 .timeline-content h3 {
   font-size: 1.2rem;
-  color: #526dff;
+  color: var(--color-accent);
   margin-bottom: 4px;
 }
 .timeline-content p {
@@ -1623,7 +1668,7 @@ body {
 /* Skills */
 .skills h4 {
   font-size: 1rem;
-  color: #667eea;
+  color: var(--color-primary);
   margin-bottom: 4px;
 }
 .skills p {
@@ -1676,12 +1721,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #667eea;
+    background: var(--color-primary);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #764ba2;
+    background: var(--color-primary-dark);
 }
 
 /* ===== iOS26 Glassmorphism Styles ===== */
@@ -2853,22 +2898,6 @@ body {
     color: #ff4444;  /* 빨간색 */
 }
 
-/* 콜로세움 워 - 로마 전투 테마 */
-#colosseum {
-    --section-bg: linear-gradient(135deg, #8B0000 0%, #A0522D 50%, #CD853F 100%);
-    font-family: 'Cinzel', 'Times New Roman', serif;
-}
-
-#colosseum .project-info h2 {
-    color: #FFD700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    font-weight: 700;
-}
-
-#colosseum .project-description {
-    color: #FFF8DC;
-}
-
 /* ⚔️ 콜로세움 워 - 고대 전장 테마 */
 #colosseum {
   --section-bg: radial-gradient(circle at 40% 30%, #2f1d0f 0%, #3b2a19 35%, #1f1309 100%);
@@ -3207,11 +3236,6 @@ body {
 #dailydicequest .project-period,
 #wordscrush .project-period {
     color: #9fc2ff;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* 배경이 항상 전체 뷰포트를 덮도록 수정 */
